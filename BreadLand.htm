@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bread Land SMP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://placehold.co/1920x1080/8c5a3b/ffffff?text=Minecraft+Landscape');
+            background-size: cover;
+            background-position: center;
+        }
+        .grain-texture {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.05;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-[#FDF8F0] text-[#4F3422]">
+
+    <!-- Header -->
+    <header id="header" class="bg-[#EADDCB] shadow-md fixed w-full top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-[#8C5A3B] flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.894 1.789l-4 1.714a1 1 0 00-.356.257l-2.28 1.954a1 1 0 000 1.638l2.28 1.954a1 1 0 00.356.257l4-1.714a1 1 0 11.894 1.789l-4 1.714a1 1 0 00-.356.257L2.606 17.08a1 1 0 000 1.84l7-3a1 1 0 00.788 0l7-3a1 1 0 000-1.84l-2.25-1.071a.999.999 0 01-.356.257l-4 1.714a1 1 0 11-.894-1.789l4-1.714a1 1 0 00.356-.257l2.28-1.954a1 1 0 000-1.638l-2.28-1.954a1 1 0 00-.356-.257l-4 1.714a1 1 0 11-.894-1.789l4-1.714a1 1 0 00.356-.257L17.394 4.92a1 1 0 000-1.84l-7-3z" />
+                </svg>
+                Bread Land SMP
+            </a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#home" class="text-[#8C5A3B] hover:text-[#6b462c] transition-colors duration-300 font-medium">Home</a>
+                <a href="#about" class="text-[#8C5A3B] hover:text-[#6b462c] transition-colors duration-300 font-medium">About</a>
+                <a href="#rules" class="text-[#8C5A3B] hover:text-[#6b462c] transition-colors duration-300 font-medium">Rules</a>
+                <a href="#join" class="bg-[#8C5A3B] hover:bg-[#6b462c] text-white font-bold py-2 px-4 rounded-lg shadow-sm transition-all duration-300 transform hover:scale-105">Join Us</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-[#8C5A3B]">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+            <a href="#home" class="block text-center text-[#8C5A3B] hover:bg-[#D5C3A8] py-2 rounded-md transition-colors duration-300">Home</a>
+            <a href="#about" class="block text-center text-[#8C5A3B] hover:bg-[#D5C3A8] py-2 rounded-md transition-colors duration-300">About</a>
+            <a href="#rules" class="block text-center text-[#8C5A3B] hover:bg-[#D5C3A8] py-2 rounded-md transition-colors duration-300">Rules</a>
+            <a href="#join" class="block text-center bg-[#8C5A3B] hover:bg-[#6b462c] text-white font-bold py-2 px-4 rounded-lg shadow-sm transition-all duration-300">Join Us</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-bg text-white pt-32 pb-20 md:pt-48 md:pb-32 text-center relative">
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+            <div class="container mx-auto px-6 relative z-10">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight tracking-tight" style="font-family: 'Inter', sans-serif;">Welcome to the Bread Land SMP</h1>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8 text-gray-200">Your new home for collaborative survival, epic builds, and a friendly, tight-knit community. Freshly baked and ready for adventure!</p>
+                <a href="#join" class="bg-[#D4A373] hover:bg-[#BF8B5A] text-[#4F3422] font-bold py-3 px-8 rounded-full text-lg shadow-lg transition-all duration-300 transform hover:scale-105">
+                    Join The Community
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-[#F4EAE0] relative">
+            <div class="grain-texture"></div>
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#8C5A3B]">About Our Server</h2>
+                    <p class="text-lg text-gray-600 mt-2">The heart and soul of our community.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-[#FDF8F0] p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="bg-[#EADDCB] rounded-full h-20 w-20 flex items-center justify-center mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#8C5A3B]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M15 21a6 6 0 00-9-5.197M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Friendly Community</h3>
+                        <p>We're a group of friends and new players who value teamwork and respect. We have an active Discord and friendly staff ready to help.</p>
+                    </div>
+                    <div class="bg-[#FDF8F0] p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="bg-[#EADDCB] rounded-full h-20 w-20 flex items-center justify-center mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#8C5A3B]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Vanilla Survival+</h3>
+                        <p>Experience Minecraft the way it was meant to be played, with a few quality-of-life tweaks to enhance your gameplay without changing the core experience.</p>
+                    </div>
+                    <div class="bg-[#FDF8F0] p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="bg-[#EADDCB] rounded-full h-20 w-20 flex items-center justify-center mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#8C5A3B]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Events & Projects</h3>
+                        <p>From server-wide building competitions to group boss fights, there's always something exciting happening. Join a community project or start your own!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rules Section -->
+        <section id="rules" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#8C5A3B]">Server Rules</h2>
+                    <p class="text-lg text-gray-600 mt-2">A few simple rules to keep things fun for everyone.</p>
+                </div>
+                <div class="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-md border-2 border-[#EADDCB]">
+                    <ul class="space-y-4 list-none text-gray-700">
+                        <li class="flex items-start"><span class="bg-green-500 rounded-full w-5 h-5 text-white flex items-center justify-center mr-3 mt-1 text-xs">✔</span> <strong>Be Respectful:</strong> No harassment, griefing, or hate speech. Treat all players with kindness.</li>
+                        <li class="flex items-start"><span class="bg-green-500 rounded-full w-5 h-5 text-white flex items-center justify-center mr-3 mt-1 text-xs">✔</span> <strong>No Cheating:</strong> Using hacked clients, x-ray, or exploits is strictly forbidden.</li>
+                        <li class="flex items-start"><span class="bg-green-500 rounded-full w-5 h-5 text-white flex items-center justify-center mr-3 mt-1 text-xs">✔</span> <strong>No Stealing or Griefing:</strong> Don't take items from other players' chests or destroy their builds.</li>
+                        <li class="flex items-start"><span class="bg-green-500 rounded-full w-5 h-5 text-white flex items-center justify-center mr-3 mt-1 text-xs">✔</span> <strong>Build Responsibly:</strong> Avoid leaving floating trees or creating lag-inducing machines. Keep the server beautiful.</li>
+                        <li class="flex items-start"><span class="bg-green-500 rounded-full w-5 h-5 text-white flex items-center justify-center mr-3 mt-1 text-xs">✔</span> <strong>Have Fun:</strong> That's why we're all here! Enjoy your time and make some new friends.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Server Status Section -->
+        <section id="status" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#8C5A3B]">Server Status</h2>
+                </div>
+                <!-- Warning about version errors -->
+                <div class="max-w-md mx-auto mt-6 p-4 rounded-xl text-center bg-yellow-100 border border-yellow-300 text-yellow-700 shadow-sm">
+                    <p class="font-semibold text-sm">⚠️ Note:</p>
+                    <p class="text-xs mt-1">If the status shows "Online" with a version error or "0/0 players," it usually means the server is temporarily offline or experiencing issues. Please try again later.</p>
+                </div>
+                <div id="status-container" class="max-w-md mx-auto bg-white p-8 rounded-xl shadow-lg border-2 border-[#EADDCB] flex items-center justify-center min-h-[120px]">
+                    <!-- Loading State -->
+                    <div id="loading-spinner" class="flex items-center space-x-3">
+                        <svg class="animate-spin h-8 w-8 text-[#8C5A3B]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        <span class="text-lg text-gray-600">Fetching server status...</span>
+                    </div>
+                    <!-- Status Content (hidden by default) -->
+                    <div id="status-content" class="hidden text-center">
+                       <div class="flex items-center justify-center space-x-3 mb-4">
+                            <span id="status-indicator" class="w-4 h-4 rounded-full"></span>
+                            <p id="status-text" class="text-2xl font-bold"></p>
+                       </div>
+                       <p id="player-count" class="text-lg text-gray-700"></p>
+                       <p id="server-version" class="text-sm text-gray-500 mt-2"></p>
+                    </div>
+                    <!-- Error Message -->
+                    <div id="status-error" class="hidden text-center">
+                        <p class="text-lg text-red-500">Could not fetch server status.</p>
+                        <p class="text-sm text-gray-500">The server might be offline or the API is down.</p>
+                    </div>
+                </div>
+                <div class="flex justify-center mt-6">
+                    <button id="refresh-button" class="bg-[#8C5A3B] hover:bg-[#6b462c] text-white font-bold py-2 px-4 rounded-lg shadow-sm transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed">
+                        Refresh Status
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Join Us Section -->
+        <section id="join" class="py-20 bg-[#EADDCB] relative">
+            <div class="grain-texture"></div>
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#8C5A3B]">Ready to Join the Fun?</h2>
+                <p class="text-lg text-gray-700 mt-2 mb-8 max-w-xl mx-auto">Joining is easy! Click the button below to join our Discord server, where you can get whitelisted and meet the community.</p>
+                <div class="relative inline-block">
+                    <button id="discord-button" class="bg-[#8C5A3B] hover:bg-[#6b462c] text-white font-bold py-4 px-10 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 text-xl">
+                        Join Our Discord
+                    </button>
+                    <div id="copy-message" class="absolute -bottom-10 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-sm py-1 px-3 rounded-md opacity-0 transition-opacity duration-300">
+                        Copied!
+                    </div>
+                </div>
+                <div class="mt-8 max-w-2xl mx-auto bg-white/50 p-6 rounded-xl shadow-inner">
+                    <h3 class="font-bold text-xl mb-4 text-[#6b462c]">Server Connection Info</h3>
+                    <div class="grid md:grid-cols-2 gap-4 text-left">
+                        <div class="bg-white/70 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg text-gray-800">Java Edition</h4>
+                            <p class="text-gray-600 mt-2">IP Address:</p>
+                            <p id="server-ip" class="bg-gray-200/60 p-2 rounded-md cursor-pointer text-center font-mono select-all mt-1" title="Click to copy">Breadland.ddns.net:31383</p>
+                        </div>
+                        <div class="bg-white/70 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg text-gray-800">Bedrock Edition</h4>
+                            <p class="text-gray-600 mt-2">IP Address:</p>
+                            <p class="bg-gray-200/60 p-2 rounded-md text-center font-mono select-all mt-1">Breadland.ddns.net</p>
+                            <p class="text-gray-600 mt-2">Port:</p>
+                            <p class="bg-gray-200/60 p-2 rounded-md text-center font-mono select-all mt-1">31383</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-[#4F3422] text-white py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Bread Land SMP. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close menu when a link is clicked
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Copy IP to clipboard
+        const serverIpElement = document.getElementById('server-ip');
+        const copyMessage = document.getElementById('copy-message');
+
+        serverIpElement.addEventListener('click', () => {
+            const ip = serverIpElement.textContent;
+            
+            // A slightly more robust way to copy that works in more environments
+            const textArea = document.createElement('textarea');
+            textArea.value = ip;
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                copyMessage.textContent = 'Copied!';
+            } catch (err) {
+                copyMessage.textContent = 'Failed to copy!';
+            }
+            document.body.removeChild(textArea);
+            
+            // Show feedback message
+            copyMessage.style.opacity = '1';
+            setTimeout(() => {
+                copyMessage.style.opacity = '0';
+            }, 2000);
+        });
+
+        // Redirect to a placeholder Discord invite
+        const discordButton = document.getElementById('discord-button');
+        discordButton.addEventListener('click', () => {
+            // Replace '#' with your actual Discord invite link
+            window.open('https://discord.gg/S7d3DqGVZY', '_blank');
+        });
+
+        // Server Status Fetch
+        document.addEventListener('DOMContentLoaded', () => {
+            const refreshButton = document.getElementById('refresh-button');
+            const loadingSpinner = document.getElementById('loading-spinner');
+            const statusContent = document.getElementById('status-content');
+            const statusError = document.getElementById('status-error');
+
+            const statusIndicator = document.getElementById('status-indicator');
+            const statusText = document.getElementById('status-text');
+            const playerCount = document.getElementById('player-count');
+            const serverVersion = document.getElementById('server-version');
+
+            const apiUrl = 'https://api.mcsrvstat.us/2/Breadland.ddns.net:31383';
+            let refreshCooldown = 0;
+
+            const fetchServerStatus = () => {
+                // Show loading state and hide previous states
+                loadingSpinner.classList.remove('hidden');
+                statusContent.classList.add('hidden');
+                statusError.classList.add('hidden');
+
+                // Disable button and start cooldown timer
+                refreshButton.disabled = true;
+                refreshCooldown = 10;
+                const countdown = setInterval(() => {
+                    refreshCooldown--;
+                    if (refreshCooldown > 0) {
+                        refreshButton.textContent = `Refreshing in ${refreshCooldown}s`;
+                    } else {
+                        clearInterval(countdown);
+                        refreshButton.textContent = 'Refresh Status';
+                        refreshButton.disabled = false;
+                    }
+                }, 1000);
+
+                fetch(apiUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        loadingSpinner.classList.add('hidden');
+                        
+                        if (data.online) {
+                            statusIndicator.classList.remove('bg-red-500');
+                            statusIndicator.classList.add('bg-green-500');
+                            statusText.textContent = 'Server is Online';
+                            statusText.classList.remove('text-red-700');
+                            statusText.classList.add('text-green-700');
+                            playerCount.textContent = `${data.players.online} / ${data.players.max} players online`;
+                            if (data.version) {
+                                serverVersion.textContent = `Version: ${data.version}`;
+                            }
+                            statusContent.classList.remove('hidden');
+                        } else {
+                            statusIndicator.classList.remove('bg-green-500');
+                            statusIndicator.classList.add('bg-red-500');
+                            statusText.textContent = 'Server is Offline';
+                            statusText.classList.remove('text-green-700');
+                            statusText.classList.add('text-red-700');
+                            playerCount.textContent = 'Please check back later.';
+                            statusContent.classList.remove('hidden');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error fetching server status:', error);
+                        loadingSpinner.classList.add('hidden');
+                        statusError.classList.remove('hidden');
+                    });
+            };
+
+            // Fetch status on page load
+            fetchServerStatus();
+
+            // Add event listener for the refresh button
+            refreshButton.addEventListener('click', fetchServerStatus);
+        });
+    </script>
+</body>
+</html>
